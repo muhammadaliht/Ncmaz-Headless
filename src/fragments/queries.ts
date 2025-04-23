@@ -165,7 +165,6 @@ export const QUERY_MUTATION_CREATE_COMMENT = gql(/* GraphQL */ `
 		$content: String = null
 		$commentOn: Int = null
 		$authorEmail: String = null
-		$approved: String = null
 		$authorUrl: String = null
 	) {
 		createComment(
@@ -175,12 +174,10 @@ export const QUERY_MUTATION_CREATE_COMMENT = gql(/* GraphQL */ `
 				parent: $parent
 				content: $content
 				commentOn: $commentOn
-				approved: $approved
 				authorEmail: $authorEmail
 				authorUrl: $authorUrl
 			}
 		) {
-			clientMutationId
 			success
 			comment {
 				...NcmazFcCommentFullFields
